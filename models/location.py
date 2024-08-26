@@ -19,3 +19,6 @@ class Location(BaseModel):
     types: List[str] = Field(default=["shoe park", "shop"])
     website: str = Field(default="http://google.com")
     language: str = Field(default="French-IN")
+
+    def __repr__(self):
+        return f'location "{self.address}"'
