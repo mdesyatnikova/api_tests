@@ -34,7 +34,7 @@ class GoogleMapsAPI:
 
     @allure.step("Updating location with place_id {place_id}")
     def update_location(self, place_id, new_address):
-        """Удаление локации"""
+        """Изменение локации"""
         update_loc_json = {'place_id': place_id, 'address': new_address, 'key': self.key.get('key')}
         response = self.client.put(self.client.base_url + Locations.UPDATE, params=self.key, json=update_loc_json)
         assert_status_code(response.status_code, HTTPStatus.OK)
